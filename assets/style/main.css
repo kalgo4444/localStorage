@@ -9,5 +9,29 @@
 button,
 input {
 	outline: none;
-	cursor: pointer;
+}
+input {
+	background: #151515;
+	color: #a1a1a1;
+	transition: 0.2s ease;
+}
+input:focus {
+	outline: 2px solid #a1a1a1;
+}
+a {
+	position: relative;
+}
+a::before {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	transition: 0.3s ease;
+	transform: scale(0);
+}
+a:hover::before {
+	transform: scale(1);
 }

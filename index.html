@@ -12,46 +12,47 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<link rel="icon" href="" />
 	</head>
-	<body class="bg-slate-950 text-white">
-		<header class="bg-slate-700 shadow-white">
+	<body class="bg-[#0A0A0A] text-white">
+		<header class="bg-black border-b border-white">
 			<nav
 				class="container h-[70px] flex items-center justify-between relative"
 			>
 				<!-- logo -->
-				<a href="#">
-					<i class="fa-solid fa-database text-4xl"></i>
-				</a>
+				<i class="fa-solid fa-database text-4xl cursor-pointer"></i>
+
 				<!-- links -->
 				<ul
 					class="flex items-center gap-10 absolute left-[50%] -translate-x-[50%] max-lg:hidden"
 				>
 					<li>
-						<a href="#" class="text-lg font-semibold">Home</a>
+						<a href="#" class="link text-lg font-semibold">Home</a>
 					</li>
 					<li>
-						<a href="#" class="text-lg font-semibold">About</a>
+						<a href="#" class="link text-lg font-semibold">About</a>
 					</li>
 					<li>
-						<a href="#" class="text-lg font-semibold">Project</a>
+						<a href="#" class="link text-lg font-semibold">Project</a>
 					</li>
 					<li>
-						<a href="#" class="text-lg font-semibold">Contact</a>
+						<a href="#" class="link text-lg font-semibold">Contact</a>
 					</li>
 				</ul>
+
 				<!-- action -->
 				<div class="flex items-center gap-8">
 					<button
 						type="button"
 						id="loginButton"
-						class="border py-2.5 px-4 cursor-pointer rounded-2xl text-lg font-bold uppercase active:scale-105 duration-200 bg-white text-slate-800"
+						class="border border-[#3E3E3E] py-2.5 px-4 cursor-pointer rounded-2xl text-lg font-semibold uppercase duration-200 bg-[#0A0A0A] hover:bg-[#1C1C1C] text-white"
 					>
 						log in
 					</button>
 					<button
 						type="button"
 						id="registerButton"
-						class="border py-2.5 px-4 cursor-pointer rounded-2xl text-lg font-bold uppercase active:scale-105 duration-200 bg-white text-slate-800"
+						class="border border-[#3E3E3E] py-2.5 px-4 cursor-pointer rounded-2xl text-lg font-semibold uppercase duration-200 bg-[#0A0A0A] hover:bg-[#1C1C1C] text-white"
 					>
 						register
 					</button>
@@ -62,86 +63,86 @@
 		<!-- register modal -->
 		<div
 			id="registerModal"
-			class="w-[500px] p-5 bg-slate-500 rounded-2xl fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10 hidden border-2 border-white"
+			class="w-[350px] md:w-[500px] p-5 bg-[#0A0A0A] rounded-2xl fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10 hidden border border-[#3E3E3E]"
 		>
 			<form class="flex flex-col gap-8">
 				<input
+					required
 					type="text"
 					placeholder="name..."
-					name="userValue"
 					id="userName"
 					class="bg-white text-black text-2xl indent-7 placeholder:text-2xl font-semibold w-full h-14 rounded-md"
 				/>
 				<input
+					required
 					type="email"
 					placeholder="email..."
-					name="userValue"
 					id="userEmail"
 					class="bg-white text-black text-2xl indent-7 placeholder:text-2xl font-semibold w-full h-14 rounded-md"
 				/>
 				<input
+					required
 					type="password"
 					placeholder="password..."
-					name="userValue"
 					autocomplete="off"
 					id="userPassword"
 					class="bg-white text-black text-2xl indent-7 placeholder:text-2xl font-semibold w-full h-14 rounded-md"
 				/>
-				<div class="mx-auto">
+				<div class="mx-auto flex items-center gap-5">
 					<button
 						type="submit"
 						id="registerBtn"
-						class="border py-2.5 px-4 cursor-pointer rounded-2xl text-lg font-bold uppercase active:scale-105 duration-200 bg-white text-slate-800"
+						class="border border-[#3E3E3E] py-2.5 px-4 cursor-pointer rounded-2xl text-lg font-semibold uppercase duration-200 bg-[#0A0A0A] hover:bg-[#1C1C1C] text-white"
 					>
 						Register
 					</button>
 					<button
 						type="submit"
 						id="cancerBtnReg"
-						class="border py-2.5 px-4 cursor-pointer rounded-2xl text-lg font-bold uppercase active:scale-105 duration-200 bg-white text-slate-800"
+						class="border border-[#3E3E3E] py-2.5 px-4 cursor-pointer rounded-2xl text-lg font-semibold uppercase duration-200 bg-[#0A0A0A] hover:bg-[#1C1C1C] text-white"
 					>
 						Cancel
 					</button>
 				</div>
 			</form>
 		</div>
+
 		<!-- login modal -->
 		<div
 			id="loginModal"
-			class="w-[500px] p-5 bg-slate-500 rounded-2xl fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10 hidden border-2 border-white"
+			class="w-[350px] md:w-[500px] p-5 bg-[#0A0A0A] rounded-2xl fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-10 hidden border border-[#3E3E3E]"
 		>
 			<form class="flex flex-col gap-8">
 				<input
 					type="email"
 					placeholder="email..."
-					name="userValue"
 					id="userEmailLog"
 					class="bg-white text-black text-2xl indent-7 placeholder:text-2xl font-semibold w-full h-14 rounded-md"
 				/>
 				<input
 					type="password"
 					placeholder="password..."
-					name="userValue"
 					autocomplete="off"
 					id="userPasswordLog"
 					class="bg-white text-black text-2xl indent-7 placeholder:text-2xl font-semibold w-full h-14 rounded-md"
 				/>
-				<div class="mx-auto">
+				<div class="mx-auto flex items-center gap-5">
 					<button
 						type="submit"
 						id="loginBtn"
-						class="border py-2.5 px-4 cursor-pointer rounded-2xl text-lg font-bold uppercase active:scale-105 duration-200 bg-white text-slate-800"
+						class="border border-[#3E3E3E] py-2.5 px-4 cursor-pointer rounded-2xl text-lg font-semibold uppercase duration-200 bg-[#0A0A0A] hover:bg-[#1C1C1C] text-white"
 					>
 						Login
 					</button>
 					<button
 						type="submit"
 						id="cancerBtnLog"
-						class="border py-2.5 px-4 cursor-pointer rounded-2xl text-lg font-bold uppercase active:scale-105 duration-200 bg-white text-slate-800"
+						class="border border-[#3E3E3E] py-2.5 px-4 cursor-pointer rounded-2xl text-lg font-semibold uppercase duration-200 bg-[#0A0A0A] hover:bg-[#1C1C1C] text-white"
 					>
 						Cancel
 					</button>
 				</div>
+				<p id="forRes" class="text-center text-2xl"></p>
 			</form>
 		</div>
 
