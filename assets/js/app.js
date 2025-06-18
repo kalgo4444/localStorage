@@ -1,127 +1,131 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // header buttons
-    const loginButtonEl = document.querySelector("#loginButton")
-    const registerButtonEl = document.querySelector("#registerButton")
+	// header buttons
+	const loginButtonEl = document.querySelector("#loginButton")
+	const registerButtonEl = document.querySelector("#registerButton")
 
-    // loginModal
-    const loginModalEl = document.querySelector("#loginModal")
-    const userEmailLogEl = document.querySelector("#userEmailLog")
-    const userPasswordLogEl = document.querySelector("#userPasswordLog")
-    const forResEl = document.querySelector("#forRes")
-    //button
-    const loginBtnEl = document.querySelector("#loginBtn")
-    const cancerBtnLogEl = document.querySelector("#cancerBtnLog")
-
-
-    // registerModal
-    const registerModalEl = document.querySelector("#registerModal")
-    const userNameEl = document.querySelector("#userName")
-    const userEmailEl = document.querySelector("#userEmail")
-    const userPasswordEl = document.querySelector("#userPassword")
-    const regTextEL = document.querySelector("#regText")
-    // button
-    const registerBtnEl = document.querySelector("#registerBtn")
-    const cancerBtnRegEl = document.querySelector("#cancerBtnReg")
-
-    //cardWrapper
-    const cardWrapperEl = document.querySelector("#cardWrapper")
+	// loginModal
+	const loginModalEl = document.querySelector("#loginModal")
+	const userEmailLogEl = document.querySelector("#userEmailLog")
+	const userPasswordLogEl = document.querySelector("#userPasswordLog")
+	const forResEl = document.querySelector("#forRes")
+	//button
+	const loginBtnEl = document.querySelector("#loginBtn")
+	const cancerBtnLogEl = document.querySelector("#cancerBtnLog")
 
 
+	// registerModal
+	const registerModalEl = document.querySelector("#registerModal")
+	const userNameEl = document.querySelector("#userName")
+	const userEmailEl = document.querySelector("#userEmail")
+	const userPasswordEl = document.querySelector("#userPassword")
+	const regTextEL = document.querySelector("#regText")
+	// button
+	const registerBtnEl = document.querySelector("#registerBtn")
+	const cancerBtnRegEl = document.querySelector("#cancerBtnReg")
 
-    // form button no submit (refresh)
-    loginBtnEl.addEventListener("click", (e) => {
-        e.preventDefault()
-    })
-    registerBtnEl.addEventListener("click", (e) => {
-        e.preventDefault()
-    })
-
-
-    //open modal login
-    loginButtonEl.addEventListener("click", () => {
-        loginModalEl.classList.toggle("hidden")
-        if (!registerModalEl.classList.contains("hidden")) {
-            registerModalEl.classList.add("hidden")
-        }
-    })
-    //close
-    cancerBtnLogEl.addEventListener("click", () => {
-        loginModalEl.classList.add("hidden")
-    })
-    window.addEventListener("keydown", (e) => {
-        if (e.key == "Escape") {
-            loginModalEl.classList.add("hidden")
-        }
-    })
-
-    //open modal register 
-    registerButtonEl.addEventListener("click", () => {
-        registerModalEl.classList.toggle("hidden")
-        if (!loginModalEl.classList.contains("hidden")) {
-            loginModalEl.classList.add("hidden")
-        }
-    })
-    //close
-    cancerBtnRegEl.addEventListener("click", () => {
-        registerModalEl.classList.add("hidden")
-    })
-    window.addEventListener("keydown", (e) => {
-        if (e.key == "Escape") {
-            registerModalEl.classList.add("hidden")
-        }
-    })
-
-
-    // take a value input register and set to storage
-    registerBtnEl.addEventListener("click", () => {
-        //input value
-        const userName = userNameEl.value
-        const userEmail = userEmailEl.value
-        const userPasswd = userPasswordEl.value
-
-        //clean value
-        if (!userName.trim()) return null
-        if (!userEmail.trim()) return null
-        if (!userPasswd.trim()) return null
-
-        //set
-        localStorage.setItem("name", userNameEl.value.toString())
-        localStorage.setItem("email", userEmailEl.value.toString())
-        localStorage.setItem("password", userPasswordEl.value.toString())
-
-        //result about register
-        regTextEL.textContent = "You are registered"
-        setTimeout(() => {
-            registerModalEl.classList.add("hidden")
-        }, 1000)
-    })
+	//cardWrapper
+	const cardWrapperEl = document.querySelector("#cardWrapper")
 
 
 
-    // take a value input login and much them
-    loginBtnEl.addEventListener("click", () => {
+	// form button no submit (refresh)
+	loginBtnEl.addEventListener("click", (e) => {
+		e.preventDefault()
+	})
+	registerBtnEl.addEventListener("click", (e) => {
+		e.preventDefault()
+	})
 
-        //input value
-        const userEmail = userEmailLogEl.value
-        const userPassword = userPasswordLogEl.value
-        const userRegEmail = localStorage.getItem("email")
-        const userRagPasswd = localStorage.getItem("password")
 
-        //clean value
-        if (!userEmail.trim()) return null
-        if (!userPassword.trim()) return null
+	//open modal login
+	loginButtonEl.addEventListener("click", () => {
+		loginModalEl.classList.toggle("hidden")
+		if (!registerModalEl.classList.contains("hidden")) {
+			registerModalEl.classList.add("hidden")
+		}
+	})
+	//close
+	cancerBtnLogEl.addEventListener("click", () => {
+		loginModalEl.classList.add("hidden")
+	})
+	window.addEventListener("keydown", (e) => {
+		if (e.key == "Escape") {
+			loginModalEl.classList.add("hidden")
+		}
+	})
 
-        //much value local and user input value
-        if (userEmail === userRegEmail && userPassword === userRagPasswd) {
-            forResEl.textContent = "You are log-in"
-            setTimeout(() => {
-                forResEl.textContent = ""
-            }, 1000)
+	//open modal register 
+	registerButtonEl.addEventListener("click", () => {
+		registerModalEl.classList.toggle("hidden")
+		if (!loginModalEl.classList.contains("hidden")) {
+			loginModalEl.classList.add("hidden")
+		}
+	})
+	//close
+	cancerBtnRegEl.addEventListener("click", () => {
+		registerModalEl.classList.add("hidden")
+	})
+	window.addEventListener("keydown", (e) => {
+		if (e.key == "Escape") {
+			registerModalEl.classList.add("hidden")
+		}
+	})
 
-            // if true login in html cardWrapper inner content
-            function bodyText() {
-                loginModalEl.classList.add("hidden")
-                cardWrapperEl.innerHTML = `
+
+	// take a value input register and set to storage
+	registerBtnEl.addEventListener("click", () => {
+		//input value
+		const userName = userNameEl.value
+		const userEmail = userEmailEl.value
+		const userPasswd = userPasswordEl.value
+
+		//clean value
+		if (!userName.trim()) return null
+		if (!userEmail.trim()) return null
+		if (!userPasswd.trim()) return null
+
+		//set
+		localStorage.setItem("name", userNameEl.value.toString())
+		localStorage.setItem("email", userEmailEl.value.toString())
+		localStorage.setItem("password", userPasswordEl.value.toString())
+
+		//result about register
+		regTextEL.textContent = "You are registered"
+		setTimeout(() => {
+			registerModalEl.classList.add("hidden")
+			regTextEL.textContent = ""
+			userNameEl.value = ""
+			userEmailEl.value = ""
+			userPasswordEl.value = ""
+		}, 1000)
+	})
+
+
+
+	// take a value input login and much them
+	loginBtnEl.addEventListener("click", () => {
+
+		//input value
+		const userEmail = userEmailLogEl.value
+		const userPassword = userPasswordLogEl.value
+		const userRegEmail = localStorage.getItem("email")
+		const userRagPasswd = localStorage.getItem("password")
+
+		//clean value
+		if (!userEmail.trim()) return null
+		if (!userPassword.trim()) return null
+
+		//much value local and user input value
+		if (userEmail === userRegEmail && userPassword === userRagPasswd) {
+			forResEl.textContent = "You are log-in"
+			setTimeout(() => {
+				forResEl.textContent = ""
+			}, 1000)
+
+			// if true login in html cardWrapper inner content
+			function bodyText() {
+				loginModalEl.classList.add("hidden")
+				cardWrapperEl.innerHTML = `
                 <!-- card1  -->
 					<div
 						class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800"
@@ -394,17 +398,17 @@ document.addEventListener("DOMContentLoaded", () => {
 						</div>
 					</div>
                 `
-            }
-            setTimeout(bodyText, 1000)
-        } else {
-            forResEl.textContent = "Email or Password is mistake"
-            setTimeout(() => {
-                forResEl.textContent = ""
-            }, 3000)
-        }
+			}
+			setTimeout(bodyText, 1000)
+		} else {
+			forResEl.textContent = "Email or Password is mistake"
+			setTimeout(() => {
+				forResEl.textContent = ""
+			}, 3000)
+		}
 
-        //clear input value
-        userEmailLogEl.value = ""
-        userPasswordLogEl.value = ""
-    })
+		//clear input value
+		userEmailLogEl.value = ""
+		userPasswordLogEl.value = ""
+	})
 })
